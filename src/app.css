@@ -1,0 +1,111 @@
+/* Escritorio clásico: fondo verde azulado, ventana gris y barras de título azules. */
+html,body,#root{height:100%;margin:0}
+body{background:#008080;overflow:hidden}
+.desktop{position:relative;height:100%;font-family:"Pixelated MS Sans Serif",Arial,sans-serif;font-size:11px;-webkit-font-smoothing:none}
+.ico{flex:none;vertical-align:middle}
+
+.desk-icon{all:unset;position:absolute;left:14px;top:14px;width:78px;display:grid;justify-items:center;gap:4px;color:#fff;text-align:center;cursor:default}
+.desk-icon span{padding:1px 2px}
+.desk-icon:focus-visible span{background:#000080;outline:1px dotted #fff}
+
+.app{position:absolute;width:min(1000px,calc(100vw - 40px));max-height:calc(100vh - 60px);display:flex;flex-direction:column}
+.app>.window-body{overflow:auto;margin:6px;display:grid;gap:8px}
+.title-bar{touch-action:none;user-select:none}
+.title-bar-text{display:flex;align-items:center;gap:5px}
+
+.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.toolbar button{display:inline-flex;align-items:center;gap:5px;min-width:0;padding:0 10px}
+.toolbar .field-row{margin:0}
+.clock{margin-left:auto;font-size:18px;color:#000080;font-weight:bold;letter-spacing:1px}
+.clock small{font-size:11px;color:#808080;font-weight:normal}
+
+/* Cada apartado con su franja azul, como en los programas de administración de antes */
+.panel{border:1px solid;border-color:#fff #808080 #808080 #fff;box-shadow:inset -1px -1px #dfdfdf,inset 1px 1px #0a0a0a33;background:#c0c0c0}
+.panel-head{display:flex;align-items:center;gap:6px;margin:2px;padding:3px 6px;background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-size:11px;font-weight:bold}
+.panel-body{padding:8px}
+
+.pulse .panel-body{display:grid;grid-template-columns:260px 1fr;gap:10px}
+.lcd{background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #808080,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;padding:10px 12px;display:grid;align-content:start;gap:4px}
+.lcd small{color:#404040;letter-spacing:1px}
+.lcd strong{font:bold 44px/1 "Courier New",monospace;color:#000080;letter-spacing:-1px}
+.lcd dl{margin:4px 0 0;display:grid;gap:2px}
+.lcd dl div{display:flex;justify-content:space-between}
+.lcd dt{color:#404040}.lcd dd{margin:0;font-weight:bold}
+.lcd .rate{margin-top:6px;border-top:1px solid #c0c0c0;padding-top:6px}
+.lcd .rate b{color:#000080;font-size:13px}
+.chart-wrap{display:grid;grid-template-rows:auto 1fr auto;gap:3px;min-width:0}
+.chart-legend{display:flex;gap:12px;color:#404040}
+.chart-legend span:first-child{margin-right:auto}
+.chart-legend i{display:inline-block;width:10px;height:3px;margin-right:4px;vertical-align:middle}
+.chart{width:100%;height:150px;display:block;box-shadow:inset -1px -1px #fff,inset 1px 1px #808080;border:1px solid #0a0a0a;border-color:#808080 #fff #fff #808080}
+.chart-foot{display:flex;justify-content:space-between;color:#808080}
+
+.lines{width:100%;border-collapse:collapse}
+.lines td{padding:4px 6px;border-bottom:1px solid #a0a0a0;white-space:nowrap}
+.lines tr:last-child td{border-bottom:0}
+.lines .state{width:34%;white-space:normal}
+.lines .lot{width:210px}
+.lines .lot .seg{display:inline-flex;margin-left:6px;vertical-align:middle}
+.lines .oee b{color:#000080}
+.lines tr.is-stop .state{color:#800000;font-weight:bold}
+.lines button{min-width:84px}
+.led{display:inline-block;width:8px;height:8px;margin-right:6px;border:1px solid #000;vertical-align:-1px}
+.led.green{background:#00c000}
+.led.red{background:#ff0000;animation:blink 1s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+
+.seg{position:relative;display:flex;gap:2px;padding:2px;width:112px;height:16px;box-sizing:border-box;background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #808080}
+.seg i{flex:1;background:transparent}
+.seg i.on{background:#000080}
+.seg{margin-right:36px}
+.seg span{position:absolute;left:calc(100% + 6px);top:0;bottom:0;display:grid;place-items:center;width:30px;justify-items:end;color:#000}
+
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:8px}
+.queue{height:190px}
+.queue table{width:100%}
+.queue td{white-space:nowrap}
+.st-held{color:#800000;font-weight:bold}
+.st-ok{color:#006000}
+.st-insp{color:#000080}
+.pareto{display:grid;gap:4px;margin-bottom:8px}
+.pbar{display:grid;grid-template-columns:150px 1fr 48px;align-items:center;gap:6px}
+.pbar span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pbar i{height:10px;background:repeating-linear-gradient(90deg,#800000 0 6px,transparent 6px 8px);min-width:4px}
+.pbar b{text-align:right}
+.empty{margin:0;color:#404040}
+.log{list-style:none;margin:0;padding:4px;height:104px;overflow:hidden;background:#fff}
+.log li{display:flex;gap:6px;padding:1px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.log time{color:#808080}
+.ev-stop,.ev-held{color:#800000}.ev-ok{color:#006000}
+
+.status-bar{margin:0 3px 3px}
+
+.modal-back{position:fixed;inset:0;display:grid;place-items:center;z-index:5}
+.dialog{width:320px}
+.dialog-row{display:flex;gap:12px;align-items:flex-start}
+.dialog-row p{margin:4px 0 10px}
+.dialog-buttons{display:flex;justify-content:flex-end;gap:6px;margin-top:12px}
+
+.taskbar{position:fixed;left:0;right:0;bottom:0;height:30px;display:flex;align-items:center;gap:4px;padding:0 3px;background:#c0c0c0;box-shadow:inset 0 1px #dfdfdf,inset 0 2px #fff;z-index:4}
+.taskbar button{display:inline-flex;align-items:center;gap:5px;height:23px;min-width:0;padding:0 8px}
+.taskbar .start{font-weight:bold}
+.taskbar .task{width:170px;justify-content:flex-start}
+.taskbar .task.active{box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px #808080;background:repeating-conic-gradient(#c0c0c0 0 25%,#fff 0 50%) 0 0/2px 2px}
+.tray{margin-left:auto;display:flex;align-items:center;gap:6px;height:22px;padding:0 10px;box-shadow:inset -1px -1px #fff,inset 1px 1px #808080}
+
+@media(max-width:900px){
+ body{overflow:auto}
+ .desktop{height:auto;min-height:100%;padding:8px 8px 40px}
+ .desk-icon{display:none}
+ .app{position:static;width:auto;max-height:none}
+ .app>.window-body{overflow:visible}
+ .pulse .panel-body,.split{grid-template-columns:1fr}
+ .lines tr{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:6px 0;border-bottom:1px solid #a0a0a0}
+ .lines td{border:0;padding:1px 4px}
+ .lines .state,.lines .lot{width:auto}
+ .taskbar .task{width:auto}
+}
+@media(prefers-reduced-motion:reduce){.led.red{animation:none}}
+.app>.window-body>*,.split>*{min-width:0}
+.queue{overflow:auto}
+@media(max-width:900px){.queue td small{display:none}.seg{width:80px}}

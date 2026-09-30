@@ -1,0 +1,28 @@
+{
+  "name": "monitor-de-planta",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Monitor en vivo de tres líneas de producción con OEE, cola de lotes y detenciones, con cara de programa de Windows 98.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "98.css": "^0.1.21",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "typescript": "~5.9.2",
+    "vite": "^7.3.6"
+  }
+}
