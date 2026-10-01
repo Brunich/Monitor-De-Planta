@@ -50,6 +50,10 @@ Hecho con React 19, TypeScript y Vite. Necesita Node 22 o más nuevo.
 
 A live monitor for three production lines, styled like a Windows 98 program. It simulates a shift in real time (or x60/x300): OEE, parts per hour per line, batches going through inspection, and downtime with its cause. You can stop a line yourself and watch availability and the Pareto react.
 
+## Licencia
+
+[MIT](LICENSE). Úsalo, cámbialo y compártelo; sólo conserva el aviso de copyright.
+
 ---
 
 Parte del [portafolio de Bruno Salas](https://bruno-portfolio-azure.vercel.app) · [GitHub](https://github.com/Brunich)
